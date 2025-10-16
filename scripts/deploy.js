@@ -4,7 +4,7 @@ const child_process = require("child_process");
 /**
  * Название процесса в PM2
  */
-const PROCESS_NAME = "universal-api";
+const PROCESS_NAME = "test-task-kotelnikov-ivan-romanovich";
 
 /**
  * Обновление проекта на сервере

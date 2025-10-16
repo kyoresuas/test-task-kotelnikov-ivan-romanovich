@@ -6,6 +6,7 @@ import {
   UpdateDateColumn,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { Booking } from "../booking";
 import { Session } from "./session.entity";
 
 export enum UserRole {
@@ -45,6 +46,12 @@ export class User {
    */
   @OneToMany(() => Session, (session) => session.user)
   sessions!: Session[];
+
+  /**
+   * Бронирования пользователя
+   */
+  @OneToMany(() => Booking, (booking) => booking.user)
+  bookings!: Booking[];
 
   /**
    * Количество сессий пользователя
