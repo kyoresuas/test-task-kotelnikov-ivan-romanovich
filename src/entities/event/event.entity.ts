@@ -10,8 +10,8 @@ import { Booking } from "@/entities/booking";
 
 @Entity()
 export class Event {
-  @PrimaryGeneratedColumn()
-  id!: number;
+  @PrimaryGeneratedColumn("uuid")
+  id!: string;
 
   /**
    * Название события

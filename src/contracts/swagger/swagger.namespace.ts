@@ -20,6 +20,8 @@ export namespace SwaggerContract {
   export enum ClientTag {
     AUTH = "Auth",
     USER = "User",
+    EVENTS = "Events",
+    BOOKINGS = "Bookings",
   }
 
   /**
@@ -27,6 +29,7 @@ export namespace SwaggerContract {
    */
   export enum AdminTag {
     USERS = "Users",
+    EVENTS = "Events",
   }
 
   /**
@@ -289,6 +292,10 @@ export namespace SwaggerContract {
           name: SwaggerContract.AdminTag.USERS,
           description: "Маршруты для управления пользователями",
         });
+        openapi.tags!.push({
+          name: SwaggerContract.AdminTag.EVENTS,
+          description: "Маршруты для управления событиями",
+        });
         break;
 
       case "client":
@@ -305,6 +312,14 @@ export namespace SwaggerContract {
           {
             name: SwaggerContract.ClientTag.USER,
             description: "Маршруты для пользователя",
+          },
+          {
+            name: SwaggerContract.ClientTag.EVENTS,
+            description: "Маршруты для событий",
+          },
+          {
+            name: SwaggerContract.ClientTag.BOOKINGS,
+            description: "Маршруты для бронирований",
           }
         );
         break;

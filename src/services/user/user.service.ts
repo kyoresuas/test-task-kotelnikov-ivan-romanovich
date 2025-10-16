@@ -64,22 +64,9 @@ export class UserService {
                 updatedAt: true,
               },
             ],
-            [
-              "tasks",
-              {
-                id: true,
-                name: true,
-                description: true,
-                deadline: true,
-                status: true,
-                priority: true,
-                createdAt: true,
-                updatedAt: true,
-              },
-            ],
           ])
         : this.regularAttributes,
-      relations: extended ? ["sessions", "tasks"] : [],
+      relations: extended ? ["sessions"] : [],
     });
 
     if (!user) throw new APIError(404);
